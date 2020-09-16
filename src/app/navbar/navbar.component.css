@@ -1,0 +1,11 @@
+.selected{
+  color: white;
+  background-color: rgb(51,48,48);
+}
+.selected a{
+  color: white;
+}
+.active{
+  border: 3px solid black;
+  /*box-shadow: 2px 2px 2px 2px green;*/
+}

@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~w3-css/3/w3.css";
+@import "~font-awesome/css/font-awesome.min.css";
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: black;
+  background-image: url('assets/images/oscar-machuca-UHcxnH5s27w-unsplash.jpg');
+}
+.form {
+  background-color: white;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+}
+.form>label, .form input {
+  margin-bottom: 3px;
+}
+
+/* the main page*/
+.nav{
+  background-color: rgb(189, 184, 184);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.nav li {
+  padding: 10px;
+}
+.nav li:hover {
+  color: white;
+  background-color: rgb(58, 56, 56);
+}
+
+/* the main area css */
+.main {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.main ul {
+  list-style-type: none;
+}
+.main li{
+  background-color: rgb(146, 145, 145);
+}
+.main div {
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+.main div span:nth-child(2) {
+  background-color: rgb(168, 164, 164);
+  padding: 2px;
+  flex: 1;
+}
+.main div span:nth-child(1) {
+  font-weight: bolder;
+}
+.main div span {
+  margin-right: 4px;
+}
+.main h3{
+  text-align: center;
+  color: white;
+}
