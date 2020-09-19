@@ -1,16 +1,25 @@
-<form action="" class="form">
+<form class="form" #registerForm = "ngForm">
   <label for="username">Name</label>
-  <input type="text" name="username" id="username">
-
+  <input type="text" name="username" id="username" [class.form-error]="username.invalid && username.touched" ngModel #username="ngModel" required>
+  <span style="color:red;font-style: italic; font-size:12px;" *ngIf="!username.valid && username.touched">
+    User Info Invalid
+  </span>
   <label for="email">Email</label>
-  <input type="email" name="email" id="email">
+  <input type="email" name="email" id="email" ngModel required>
 
   <label for="pwd">Password</label>
-  <input type="password" name="pwd" id="pwd">
+  <input type="password" name="pwd" id="pwd" ngModel required>
 
   <label for="cpwd">Confirm Password</label>
-  <input type="password" name="cpwd" id="cpwd">
+  <input type="password" name="cpwd" id="cpwd" ngModel required>
 
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="!registerForm.valid">Submit</button>
 </form>
 
+<span style="background-color:white">
+  {{registerForm.value | json}}
+  <br>
+  {{registerForm.valid}}
+  <br>
+  {{username.valid}}
+</span>

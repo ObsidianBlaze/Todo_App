@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {NavbarComponent} from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
-import { ContentComponent } from './content/content.component';
-import { AddtodoComponent } from './addtodo/addtodo.component';
+import {ContentComponent} from './content/content.component';
+import {AddtodoComponent} from './addtodo/addtodo.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,12 @@ import { AddtodoComponent } from './addtodo/addtodo.component';
       {path: 'home', component: ContentComponent},
       {path: 'addtodo', component: AddtodoComponent},
       {path: '**', component: LoginComponent}
-    ])
+    ]),
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
