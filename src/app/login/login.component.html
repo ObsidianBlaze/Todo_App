@@ -1,8 +1,9 @@
- <form action="" class="form">
+ <form class="form" #loginForm = "ngForm" (ngSubmit)="loginUser(loginForm)">
+   <div *ngIf="this.logMessage !== null">{{this.logMessage}}</div>
     <label for="username">Username</label>
-    <input type="text" name="username" id="username">
+    <input type="text" name="username" id="username" #username="ngModel" required ngModel>
     <label for="pwd">Password</label>
-    <input type="password" name="pwd" id="pwd">
-    <button type="submit">Submit</button>
+    <input type="password" name="pwd" id="pwd" required #password="ngModel" ngModel>
+    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
   </form>
 
