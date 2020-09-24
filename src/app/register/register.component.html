@@ -1,25 +1,30 @@
-<form class="form" #registerForm = "ngForm">
+<form class="form" #registerForm = "ngForm" (ngSubmit)="submitForm(registerForm)">
   <label for="username">Name</label>
+<!--  <input type="text" [(ngModel)]="userDetials.username" name="username" id="username" [class.form-error]="username.invalid && username.touched" ngModel #username="ngModel" required>-->
   <input type="text" name="username" id="username" [class.form-error]="username.invalid && username.touched" ngModel #username="ngModel" required>
   <span style="color:red;font-style: italic; font-size:12px;" *ngIf="!username.valid && username.touched">
     User Info Invalid
   </span>
   <label for="email">Email</label>
-  <input type="email" name="email" id="email" ngModel required>
+  <input type="email" name="email" id="email" required ngModel #email="ngModel">
 
   <label for="pwd">Password</label>
-  <input type="password" name="pwd" id="pwd" ngModel required>
+  <input type="password" name="pwd" id="pwd" ngModel required #pwd="ngModel">
 
   <label for="cpwd">Confirm Password</label>
-  <input type="password" name="cpwd" id="cpwd" ngModel required>
-
-  <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+  <input type="password" name="cpwd" id="cpwd" ngModel required #cpwd="ngModel">
+  <span *ngIf="pwd.value !== cpwd.value" style="color:red;font-style: italic; font-size:12px;">
+    Password does not match!
+  </span>
+  <button type="submit" [disabled]="!registerForm.valid ||pwd.value !== cpwd.value">Submit</button>
 </form>
 
-<span style="background-color:white">
-  {{registerForm.value | json}}
-  <br>
-  {{registerForm.valid}}
-  <br>
-  {{username.valid}}
-</span>
+<!--<span style="background-color:white">-->
+<!--  {{registerForm.value | json}}-->
+<!--  <br>-->
+<!--  {{registerForm.valid}}-->
+<!--  <br>-->
+<!--  {{username.valid}}-->
+<!--  <br>-->
+<!--  {{userDetials.username}}-->
+<!--</span>-->
